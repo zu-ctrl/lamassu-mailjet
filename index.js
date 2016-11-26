@@ -1,24 +1,17 @@
 const Mailjet = require('node-mailjet')
 
 const NAME = 'Mailjet'
-const SUPPORTED_MODULES = ['email']
 
-let conf
-
-function config (_conf) {
-  conf = _conf
-}
-
-function sendMessage (rec) {
-  const mailjet = Mailjet.connect(conf.apiKey, conf.apiSecret)
+function sendMessage (account, rec) {
+  const mailjet = Mailjet.connect(account.apiKey, account.apiSecret)
   const sendEmail = mailjet.post('send')
 
   const emailData = {
-    FromEmail: conf.fromEmail,
+    FromEmail: account.fromEmail,
     FromName: 'Lamassu Server',
     Subject: rec.email.subject,
     'Text-part': rec.email.body,
-    Recipients: [{'Email': conf.toEmail}]
+    Recipients: [{'Email': account.toEmail}]
   }
 
   return sendEmail.request(emailData)
@@ -26,7 +19,5 @@ function sendMessage (rec) {
 
 module.exports = {
   NAME,
-  SUPPORTED_MODULES,
-  config,
   sendMessage
 }
