@@ -6,15 +6,13 @@
       "code": "apiKey",
       "display": "API key",
       "fieldType": "string",
-      "secret": false,
       "required": true,
       "value": ""
     },
     {
       "code": "apiSecret",
       "display": "API secret",
-      "fieldType": "string",
-      "secret": true,
+      "fieldType": "password",
       "required": true,
       "value": ""
     },
@@ -22,7 +20,6 @@
       "code": "fromEmail",
       "display": "From email",
       "fieldType": "string",
-      "secret": false,
       "required": true,
       "value": ""
     },
@@ -30,7 +27,6 @@
       "code": "toEmail",
       "display": "To email",
       "fieldType": "string",
-      "secret": false,
       "required": true,
       "value": ""
     }
