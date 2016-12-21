@@ -1,6 +1,6 @@
 {
   "name": "lamassu-mailjet",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use Mailjet service to send notification emails in lamassu-server.",
   "main": "index.js",
   "repository": {
